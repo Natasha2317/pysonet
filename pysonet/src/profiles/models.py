@@ -9,8 +9,8 @@ class UserNet(AbstractUser):
     """ Custom user model
     """
     GENDER = (
-        ('male', 'male'),
-        ('female', 'female')
+        ('male', 'мужской'),
+        ('female', 'женский')
     )
     middle_name = models.CharField(max_length=50)
     first_login = models.DateTimeField(blank=True, null=True)
