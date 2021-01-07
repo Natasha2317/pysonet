@@ -12,7 +12,7 @@ from src.comments.models import AbstractComment
 class Post(models.Model):
     """ Post model
     """
-    text = models.TextField(max_length=1024)
+    text = models.TextField(max_length=3000)
     create_date = models.DateTimeField(auto_now_add=True)
     published = models.BooleanField(default=True)
     moderation = models.BooleanField(default=True)

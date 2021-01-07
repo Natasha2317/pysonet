@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'src.profiles',
     'src.wall',
     'src.followers',
-    # 'src.feed'
+    'src.feed'
 ]
 
 MIDDLEWARE = [
@@ -86,15 +86,14 @@ DATABASES = {
     }
 }
 
-
 # DATABASES = {
-#     "default": {
-#         "ENGINE": os.environ.get("POSTGRES_ENGINE", "django.db.backends.sqlite3"),
-#         "NAME": os.environ.get("POSTGRES_DB", os.path.join(BASE_DIR, "db.sqlite3")),
-#         "USER": os.environ.get("POSTGRES_USER", "postgres"),
-#         "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "123"),
-#         "HOST": os.environ.get("POSTGRES_HOST", "localhost"),
-#         "PORT": os.environ.get("POSTGRES_PORT", "5432"),
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'std_946',
+#         'USER': 'std_946',
+#         'PASSWORD': 'cisco12345',
+#         'HOST': 'std-mysql',
+#         'PORT': '3306',
 #     }
 # }
 
