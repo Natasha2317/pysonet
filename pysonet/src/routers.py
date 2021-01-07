@@ -10,9 +10,6 @@ schema_view = get_schema_view(
       title="PySoNet API",
       default_version='v1',
       description="Docs",
-      # terms_of_service="https://www.google.com/policies/terms/",
-      # contact=openapi.Contact(email="contact@snippets.local"),
-      # license=openapi.License(name="BSD License"),
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
@@ -26,6 +23,6 @@ urlpatterns = [
 
     path('wall/', include('src.wall.urls')),
     # path('feed/', include('src.feed.urls')),
-    # path('follower/', include('src.followers.urls')),
+    path('follower/', include('src.followers.urls')),
     path('', include('src.profiles.urls')),
 ]
