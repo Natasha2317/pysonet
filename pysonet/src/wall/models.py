@@ -12,21 +12,25 @@ from src.comments.models import AbstractComment
 class Post(models.Model):
     """ Post model
     """
+    title = models.CharField('Заголовок поста', max_length=200, blank=True, null=True)
     text = models.TextField(max_length=3000)
-    create_date = models.DateTimeField(auto_now_add=True)
-    published = models.BooleanField(default=True)
+    create_date = models.DateTimeField('Дата публикации',auto_now_add=True)
+    published = models.BooleanField('Опубликовано',default=True)
     moderation = models.BooleanField(default=True)
-    view_count = models.PositiveIntegerField(default=0)
+    view_count = models.PositiveIntegerField('Количество просмотров',default=0)
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='posts'
     )
 
     def __str__(self):
         # Post by {self.user} -
-        return f'id {self.id}'
+        return self.title
 
     def comments_count(self):
         return self.comments.count()
+
+    class Meta:
+            ordering = ['published']
 
 class Comment(AbstractComment, MPTTModel):
     """ Модель коментариев к постам

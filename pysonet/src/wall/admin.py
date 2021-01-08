@@ -11,13 +11,16 @@ from src.wall.models import Post, Comment
 class PostAdmin(admin.ModelAdmin):
     """ Посты
     """
-    list_display = ("user", "published", "create_date", "moderation", "view_count", "id")
+    list_display = ("id", "user", "title", "published", "create_date", "moderation", "view_count")
+    list_display_links = ["title"]
+    list_filter = ["user"]
 
 
 @admin.register(Comment)
 class CommentAdmin(MPTTModelAdmin, admin.ModelAdmin):
     """ Коментарии к постам
     """
-    list_display = ("user", "post", "created_date", "update_date", "published", "id")
-    # actions = ['unpublish', 'publish']
+    list_display = ("user", "post", "text", "created_date", "update_date", "published", "id")
+    list_display_links = ("text", "post")
+    list_filter = ("user", "post")
     mptt_level_indent = 15

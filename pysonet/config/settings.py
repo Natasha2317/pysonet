@@ -15,7 +15,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 't8(2$x$syh-b)+q%d2v-1=5h=f29+-42ybp@=_i*@2$6%=-72m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.environ.get("DEBUG", default=1)))
+
 
 ALLOWED_HOSTS = []
 
@@ -75,27 +76,27 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pysonet',
-        'USER': 'postgres',
-        'PASSWORD': '123',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'std_946',
-#         'USER': 'std_946',
-#         'PASSWORD': 'cisco12345',
-#         'HOST': 'std-mysql',
-#         'PORT': '3306',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'pysonet',
+#         'USER': 'postgres',
+#         'PASSWORD': '123',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'std_946',
+        'USER': 'std_946',
+        'PASSWORD': 'cisco12345',
+        'HOST': 'std-mysql',
+        'PORT': '3306',
+    }
+}
 
 
 # Password validation
@@ -136,6 +137,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

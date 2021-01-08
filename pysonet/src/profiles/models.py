@@ -13,13 +13,13 @@ class UserNet(AbstractUser):
         ('female', 'женский')
     )
     first_login = models.DateTimeField(blank=True, null=True)
-    phone = models.CharField(max_length=11)
+    phone = models.CharField('Телефон', max_length=11)
     avatar = models.ImageField(upload_to='user/avatar/', blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
     github = models.CharField(max_length=500, blank=True, null=True)
-    birthday = models.DateField(blank=True, null=True)
-    gender = models.CharField(max_length=6, choices=GENDER, default='male')
-    technology = models.ManyToManyField('Technology', related_name='users', blank=True, null=True)
+    birthday = models.DateField('Дата рождения',null=True)
+    gender = models.CharField('Пол',max_length=6, choices=GENDER, default='male')
+    technology = models.ManyToManyField('Technology', related_name='users', blank=True)
 
 
 class Technology(models.Model):

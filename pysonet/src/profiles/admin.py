@@ -15,7 +15,8 @@ class UserNetAdmin(UserAdmin):
             'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
         }),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
-        (_('Info'), {'fields': ('phone', 'avatar', 'gender', 'technology')}),
+        (_('Info'), {'fields': ('phone', 'avatar', 'gender', 'birthday', 'technology')}),
     )
+    search_field = ('username')
 
 admin.site.register(UserNet, UserNetAdmin)
