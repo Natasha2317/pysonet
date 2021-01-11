@@ -12,6 +12,7 @@ from src.comments.models import AbstractComment
 class Post(models.Model):
     """ Post model
     """
+
     title = models.CharField('Заголовок поста', max_length=200, blank=True, null=True)
     text = models.TextField(max_length=3000)
     create_date = models.DateTimeField('Дата публикации',auto_now_add=True)
@@ -21,6 +22,7 @@ class Post(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='posts'
     )
+    idtechnology = models.ManyToManyField('IdTechnology', max_length=100, null=True)
 
     def __str__(self):
         # Post by {self.user} -
@@ -31,6 +33,14 @@ class Post(models.Model):
 
     class Meta:
             ordering = ['published']
+
+class IdTechnology(models.Model):
+    """ IdTechnology model
+    """
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 class Comment(AbstractComment, MPTTModel):
     """ Модель коментариев к постам
