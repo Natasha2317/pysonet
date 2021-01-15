@@ -14,3 +14,4 @@ class Follower(models.Model):
     subscriber = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='subscribers'
     )
+

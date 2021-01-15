@@ -20,10 +20,19 @@ class UserNet(AbstractUser):
     birthday = models.DateField('Дата рождения',null=True)
     gender = models.CharField('Пол', max_length=6, choices=GENDER, default='male')
     technology = models.ManyToManyField('Technology', related_name='users', blank=True)
+    group = models.ManyToManyField('Group', related_name='users', blank=True)
 
 
 class Technology(models.Model):
     """ Technology model
+    """
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Group(models.Model):
+    """ Group model
     """
     name = models.CharField(max_length=100)
 

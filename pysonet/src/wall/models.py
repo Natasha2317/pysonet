@@ -32,7 +32,7 @@ class Post(models.Model):
         return self.comments.count()
 
     class Meta:
-            ordering = ['published']
+            ordering = ['create_date']
 
 class IdTechnology(models.Model):
     """ IdTechnology model

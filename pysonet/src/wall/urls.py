@@ -11,3 +11,5 @@ urlpatterns = [
     })),
     path('<int:pk>', views.PostListView.as_view()),
 ]
+
+
