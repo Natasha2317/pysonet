@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 't8(2$x$syh-b)+q%d2v-1=5h=f29+-42ybp@=_i*@2$6%=-72m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(int(os.environ.get("DEBUG", default=1)))
+DEBUG = false
 
 
 ALLOWED_HOSTS = []
