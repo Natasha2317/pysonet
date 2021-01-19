@@ -4,7 +4,6 @@ from rest_framework import permissions
 from .models import UserNet
 from .serializers import GetUserNetSerializer, GetUserNetPublicSerializer
 
-
 class UserNetPublicView(ModelViewSet):
     """ Вывод публичного профиля пользователя
     """

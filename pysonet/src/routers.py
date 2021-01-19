@@ -25,4 +25,5 @@ urlpatterns = [
     path('feed/', include('src.feed.urls')),
     path('follower/', include('src.followers.urls')),
     path('', include('src.profiles.urls')),
+
 ]

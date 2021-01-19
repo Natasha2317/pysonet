@@ -16,7 +16,7 @@ SECRET_KEY = 't8(2$x$syh-b)+q%d2v-1=5h=f29+-42ybp@=_i*@2$6%=-72m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = bool(int(os.environ.get("DEBUG", default=0)))
-DEBUG = False
+DEBUG = TEMPLATE_DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 
@@ -136,10 +136,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -182,6 +186,8 @@ SIMPLE_JWT = {
 }
 
 AUTH_USER_MODEL = 'profiles.UserNet'
+
+
 
 
 # CORS_ORIGIN_WHITELIST = [
