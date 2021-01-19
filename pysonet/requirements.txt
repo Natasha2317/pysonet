@@ -36,7 +36,6 @@ psycopg2==2.8.6
 pycparser==2.20
 PyJWT==2.0.0
 pyparsing==2.4.7
-python==3.7.7
 python3-openid==3.2.0
 pytz==2020.5
 PyYAML==5.3.1
