@@ -13,7 +13,7 @@ urlpatterns = [
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
     path('api/v1/', include('src.routers')),
-    path('', include('src.routers'))
+    path('', include('src.profiles.urls'))
 ]
 
 

@@ -4,6 +4,12 @@ from rest_framework import permissions
 from .models import UserNet
 from .serializers import GetUserNetSerializer, GetUserNetPublicSerializer
 
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse("Это страница заглушка.")
+
 class UserNetPublicView(ModelViewSet):
     """ Вывод публичного профиля пользователя
     """
