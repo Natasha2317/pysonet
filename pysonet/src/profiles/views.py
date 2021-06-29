@@ -17,8 +17,7 @@ class UserNetPublicView(ModelViewSet):
     serializer_class = GetUserNetPublicSerializer
     permission_classes = [permissions.AllowAny]
 
-
-class UserNetPrivateView(mixins.RetrieveModelMixin, generics.GenericAPIView):
+class UserNetPrivateView(ModelViewSet):
     """ Вывод профиля пользователя
     """
     serializer_class = GetUserNetSerializer
@@ -26,10 +25,3 @@ class UserNetPrivateView(mixins.RetrieveModelMixin, generics.GenericAPIView):
 
     def get_queryset(self):
         return UserNet.objects.filter(id=self.request.user.id)
-
-    def get_object(self):
-        obj = get_object_or_404(self.get_queryset())
-        self.check_object_permissions(self.request, object)
-        return obj
-    def get(self, request):
-        return self.retrieve(request)
