@@ -10,6 +10,7 @@ class GetUserNetSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserNet
         exclude = (
+            "id",
             "password",
             "last_login",
             "is_active",
@@ -18,7 +19,6 @@ class GetUserNetSerializer(serializers.ModelSerializer):
             "groups",
             "user_permissions",
             "date_joined",
-            "email",
             "avatar",
             "first_login"
         )
