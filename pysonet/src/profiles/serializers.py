@@ -5,7 +5,7 @@ from .models import UserNet
 class GetUserNetSerializer(serializers.ModelSerializer):
     """ Вывод инфо о user
     """
-    avatar = serializers.ImageField(read_only=True)
+#     avatar = serializers.ImageField(read_only=True)
 
     class Meta:
         model = UserNet
@@ -16,7 +16,10 @@ class GetUserNetSerializer(serializers.ModelSerializer):
             "is_staff",
             "is_superuser",
             "groups",
-            "user_permissions"
+            "user_permissions",
+            "date_joined",
+            "email",
+            "avatar"
         )
 
 class GetUserNetPublicSerializer(serializers.ModelSerializer):
