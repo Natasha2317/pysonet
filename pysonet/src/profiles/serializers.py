@@ -19,7 +19,8 @@ class GetUserNetSerializer(serializers.ModelSerializer):
             "user_permissions",
             "date_joined",
             "email",
-            "avatar"
+            "avatar",
+            "first_login"
         )
 
 class GetUserNetPublicSerializer(serializers.ModelSerializer):
