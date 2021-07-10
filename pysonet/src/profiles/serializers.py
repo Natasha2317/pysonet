@@ -10,7 +10,6 @@ class GetUserNetSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserNet
         exclude = (
-            "id",
             "password",
             "last_login",
             "is_active",
