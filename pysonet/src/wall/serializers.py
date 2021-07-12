@@ -39,7 +39,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ("id", "create_date", "user", "text", "comments", "view_count")
+        fields = ("id", "create_date","title", "user", "text", "comments", "view_count")
 
 
 class ListPostSerializer(serializers.ModelSerializer):
@@ -49,4 +49,4 @@ class ListPostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ("id", "create_date", "user", "text", "comments_count")
+        fields = ("id", "create_date", "user", "title", "text", "comments_count")
