@@ -26,7 +26,7 @@ class PostView(CreateRetrieveUpdateDestroy):
     queryset = Post.objects.all().select_related('user').prefetch_related('comments')
     serializer_class = PostSerializer
     permission_classes_by_action = {'get': [permissions.AllowAny],
-                                    'update': [permissions.AllowAny],
+                                    'update': [IsAuthor],
                                     'destroy': [IsAuthor]}
 
     def perform_create(self, serializer):
