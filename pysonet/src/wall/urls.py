@@ -9,7 +9,7 @@ urlpatterns = [
     path('post/<int:pk>', views.PostView.as_view({
         'get': 'retrieve', 'put': 'update', 'delete': 'destroy'
     })),
-    path('post/<int:pk>', views.PostListView.as_view()),
+    path('<int:pk>', views.PostListView.as_view()),
 ]
 
 
